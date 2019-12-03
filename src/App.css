@@ -3,6 +3,8 @@
   width: 400px;
   padding: 8px;
   box-shadow: #eeeeee 1pz 1px 1px;
+  display: flex;
+  flex-direction: row;
 }
 
 .card input {
@@ -10,4 +12,9 @@
   border-top: none;
   border-right: none;
   border-left: none;
+  font-size: 12px;
+
+}
+.card label{
+  font-size: 10px;
 }
