@@ -32,5 +32,7 @@ export default ({
       value={hitpoints}
       onChange={e => onHitpointsChange(id, e)}
     />
-
+    <button>
+      -
+    </button>
   </div>;

@@ -1,40 +1,19 @@
 import React, { Component } from 'react'
 import './App.css';
 import Card from './Card'
+import { randomId } from "./Utility";
+import { initialState } from "./Constants";
 
 
-const randomId = () =>
-  Math.floor(Math.random() * 1000000);
+
+
 
 class App extends Component {
 
   constructor(props) {
     super(props)
     this.state = {
-      elements: [{
-        id: randomId(),
-        name: "player 1",
-        initiative: 20,
-        hitpoints: 50,
-      }, {
-        id: randomId(),
-        name: "player 2",
-        initiative: 19,
-        hitpoints: 50,
-
-      }, {
-        id: randomId(),
-        name: "player 3",
-        initiative: 18,
-        hitpoints: 50,
-
-      }, {
-        id: randomId(),
-        name: "player 4",
-        initiative: 17,
-        hitpoints: 50,
-
-      }]
+      elements: initialState,
     };
     this.updateName = this.updateName.bind(this)
     this.updateInitiative = this.updateInitiative.bind(this)
@@ -82,6 +61,11 @@ class App extends Component {
     this.setState({
       elements: elements.sort((l, r) => r.initiative - l.initiative)
     })
+  }
+
+
+  removeElement(id) {
+
   }
 
   sortElements() {
