@@ -2,30 +2,34 @@ import React, { Component } from 'react'
 import './App.css';
 import Card from './Card'
 
+
+const randomId = () =>
+  Math.floor(Math.random() * 1000000);
+
 class App extends Component {
 
   constructor(props) {
     super(props)
     this.state = {
       elements: [{
-        id: 1,
+        id: randomId(),
         name: "player 1",
         initiative: 20,
         hitpoints: 50,
       }, {
-        id: 2,
+        id: randomId(),
         name: "player 2",
         initiative: 19,
         hitpoints: 50,
 
       }, {
-        id: 3,
+        id: randomId(),
         name: "player 3",
         initiative: 18,
         hitpoints: 50,
 
       }, {
-        id: 4,
+        id: randomId(),
         name: "player 4",
         initiative: 17,
         hitpoints: 50,
@@ -70,7 +74,7 @@ class App extends Component {
   addCard() {
     const { elements } = this.state;
     elements[elements.length] = {
-      id: elements.length + 1,
+      id: randomId(),
       name: `player ${elements.length + 1}`,
       initiative: -100,
       hitpoints: 10,
@@ -93,6 +97,7 @@ class App extends Component {
     return (
       <div>
         <button onClick={this.addCard}>+</button>
+
         {elements.map(elements =>
           <Card
             key={elements.key}
