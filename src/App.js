@@ -9,15 +9,28 @@ class App extends Component {
     this.state = {
       elements: [{
         id: 1,
-        name: "player 1"
-
+        name: "player 1",
+        initiative: 20,
       }, {
         id: 2,
-        name: "player 2"
+        name: "player 2",
+        initiative: 19,
+
+      }, {
+        id: 3,
+        name: "player 3",
+        initiative: 18,
+
+      }, {
+        id: 4,
+        name: "player 4",
+        initiative: 17,
 
       }]
     };
     this.updateName = this.updateName.bind(this)
+    this.updateInitiative = this.updateInitiative.bind(this)
+
   }
 
   updateName(id, e) {
@@ -28,15 +41,36 @@ class App extends Component {
     this.setState({ elements });
   }
 
+  updateInitiative(id, e) {
+    clearTimeout(this.timeout_)
+    const { value } = e.target;
+    const elements = this.state.elements
+    const index = elements.findIndex(el => el.id === id)
+    elements[index].initiative = Number(value);
+    this.setState({ elements });
+    this.timeout_ = setTimeout(() => this.sortElements, 500)
+  }
+
+
+  sortElements() {
+    const { elements } = this.state;
+    this.setState({
+      elements: elements.sort((l, r) => r.initiative - l.initiative)
+    })
+  }
+
+
   render() {
     const { elements } = this.state;
     return (
       <div>
         {elements.map(elements =>
           <Card
-            value={elements.name}
             key={elements.key}
-            onChange={this.updateName}
+            name={elements.name}
+            initiative={elements.initiative}
+            onNameChange={this.updateName}
+            onInitiativeChange={this.updateInitiative}
             id={elements.id}
           />
 
