@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-export default ({ onChange }) =>
+export default ({ id, value, onChange }) =>
   <div>
-    <input type="text" onChange={e => onChange(e)} />
+    <input type="text" value={value} onChange={e => onChange(id, e)} />
   </div>;
