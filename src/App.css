@@ -1,3 +1,9 @@
+.header{
+  width: 480px;
+  margin: 12 auto;
+  text-align: center;
+}
+
 .card {
   margin: 0px 0px 12px opx;
   width: 400px;
