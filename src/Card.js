@@ -8,7 +8,8 @@ export default ({
   hitpoints,
   onNameChange,
   onInitiativeChange,
-  onHitpointsChange
+  onHitpointsChange,
+  onRemoveElement,
 }) =>
   <div className="card">
     <Input
@@ -32,7 +33,7 @@ export default ({
       value={hitpoints}
       onChange={e => onHitpointsChange(id, e)}
     />
-    <button>
+    <button onClick={() => onRemoveElement(id)}>
       -
     </button>
   </div>;

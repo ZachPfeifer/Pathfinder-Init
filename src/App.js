@@ -19,8 +19,7 @@ class App extends Component {
     this.updateInitiative = this.updateInitiative.bind(this)
     this.updateHitpoints = this.updateHitpoints.bind(this)
     this.addCard = this.addCard.bind(this)
-
-
+    this.removeElement = this.removeElement.bind(this)
 
   }
 
@@ -65,7 +64,9 @@ class App extends Component {
 
 
   removeElement(id) {
-
+    let { elements } = this.state;
+    elements = elements.filter(el => el.id !== id)
+    this.setState({ elements });
   }
 
   sortElements() {
@@ -91,6 +92,7 @@ class App extends Component {
             onNameChange={this.updateName}
             onInitiativeChange={this.updateInitiative}
             onHitpointsChange={this.updateHitpoints}
+            onRemoveElement={this.removeElement}
             id={elements.id}
           />
 
