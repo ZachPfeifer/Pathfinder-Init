@@ -1,6 +1,6 @@
 import React from 'react';
-import Input from './Input'
-import Utility, { rollD20 } from './Utility'
+import Input from '../random/Input'
+import { rollD20 } from '../random/Utility'
 
 export default ({
   id,

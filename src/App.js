@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import './App.css';
-import Card from './Card'
+import Card from './components/Card'
 // import { randomId } from "./Utility";
 import uuid from 'uuid'
-import { initialState } from "./Constants";
+import { initialState } from "./state/Constants";
 
 
 
@@ -25,6 +25,40 @@ class App extends Component {
 
   }
 
+
+  //Local Storage
+  componentWillMount() {
+    localStorage.getItem('Players') && this.setState({
+      elements: JSON.parse(localStorage.getItem('Players'))
+    })
+  }
+
+  componentDidMount() {
+    if (!localStorage.getItem('Players')) {
+      this.fetchData();
+    } else {
+      console.log('Using Local Storage for Player Info');
+    }
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    localStorage.setItem('Players', JSON.stringify(nextState.elements));
+    // localStorage.setItem('PlayersDate', Date.now());
+
+  }
+
+  clearLocalStorage() {
+    localStorage.removeItem("Players");
+    window.location.reload(false)
+  }
+
+  fetchData() {
+    //API/SERVER Link for later
+  }
+
+
+
+  //Update Functions
   updateName(id, e) {
     const { value } = e.target;
     const elements = this.state.elements
@@ -94,7 +128,7 @@ class App extends Component {
     return (
       <div>
         <button onClick={this.addCard}>+</button>
-
+        <button onClick={this.clearLocalStorage}>Clear Storage</button>
         {elements.map(elements =>
           <Card
             key={elements.key}
