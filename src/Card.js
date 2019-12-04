@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Input from './Input'
+import Utility, { rollD20 } from './Utility'
 
 export default ({
   id,
@@ -11,6 +12,7 @@ export default ({
   onHitpointsChange,
   onRemoveElement,
 }) =>
+
   <div className="card">
     <Input
       label="Name"
@@ -25,7 +27,7 @@ export default ({
       value={initiative}
       onChange={e => onInitiativeChange(id, e)}
     />
-    <button onClick={() => onInitiativeChange(id, { target: { value: 20 } })}>Roll D20</button>
+    <button onClick={() => onInitiativeChange(id, { target: { value: rollD20() } })}>Roll D20</button>
 
 
     <Input

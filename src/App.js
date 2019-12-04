@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import './App.css';
 import Card from './Card'
-import { randomId } from "./Utility";
+// import { randomId } from "./Utility";
+import uuid from 'uuid'
 import { initialState } from "./Constants";
+
 
 
 
@@ -52,7 +54,7 @@ class App extends Component {
   addCard() {
     const { elements } = this.state;
     elements[elements.length] = {
-      id: randomId(),
+      id: uuid(),
       name: `player ${elements.length + 1}`,
       initiative: -100,
       hitpoints: 10,
@@ -78,7 +80,17 @@ class App extends Component {
 
 
   render() {
+    //TEST Rendering
+    // console.log(randomId())
+    console.log(uuid())
+    console.log(this.state.elements);
+
+
+
+
+
     const { elements } = this.state;
+
     return (
       <div>
         <button onClick={this.addCard}>+</button>
