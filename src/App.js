@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import './App.css';
-import Card from './components/Card'
-// import { randomId } from "./Utility";
 import uuid from 'uuid'
-import { initialState } from "./state/Constants";
+import { initialState, rolls } from "./state/Constants";
+import Card from './components/Card'
+import Dice from './components/Dice'
 
 
 
@@ -16,24 +16,31 @@ class App extends Component {
     super(props)
     this.state = {
       elements: initialState,
+      diceRoll: rolls,
     };
     this.updateName = this.updateName.bind(this)
     this.updateInitiative = this.updateInitiative.bind(this)
     this.updateHitpoints = this.updateHitpoints.bind(this)
+    this.updateAc = this.updateAc.bind(this)
+
     this.addCard = this.addCard.bind(this)
     this.removeElement = this.removeElement.bind(this)
+
+    //NEW
+    this.updateRoll = this.updateRoll.bind(this)
+
 
   }
 
 
   //Local Storage
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     localStorage.getItem('Players') && this.setState({
       elements: JSON.parse(localStorage.getItem('Players'))
     })
   }
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     if (!localStorage.getItem('Players')) {
       this.fetchData();
     } else {
@@ -41,7 +48,7 @@ class App extends Component {
     }
   }
 
-  componentWillUpdate(nextProps, nextState) {
+  UNSAFE_componentWillUpdate(nextProps, nextState) {
     localStorage.setItem('Players', JSON.stringify(nextState.elements));
     // localStorage.setItem('PlayersDate', Date.now());
 
@@ -58,7 +65,8 @@ class App extends Component {
 
 
 
-  //Update Functions
+  //SECTION Update Functions
+  //Player
   updateName(id, e) {
     const { value } = e.target;
     const elements = this.state.elements
@@ -85,19 +93,37 @@ class App extends Component {
     this.setState({ elements });
   }
 
+  updateAc(id, e) {
+    const { value } = e.target;
+    const elements = this.state.elements
+    const index = elements.findIndex(el => el.id === id)
+    elements[index].ac = Number(value);
+    this.setState({ elements });
+  }
+
+  //ROLLs
+  updateRoll(e) {
+    const { value } = e.target;
+    let diceRoll = this.state.diceRoll
+    diceRoll = value;
+    this.setState({ diceRoll });
+  }
+
+
+  //SECTION ADD/REMOVE
   addCard() {
     const { elements } = this.state;
     elements[elements.length] = {
       id: uuid(),
       name: `player ${elements.length + 1}`,
-      initiative: -100,
-      hitpoints: 10,
+      initiative: undefined,
+      hitpoints: undefined,
+      ac: undefined,
     };
     this.setState({
       elements: elements.sort((l, r) => r.initiative - l.initiative)
     })
   }
-
 
   removeElement(id) {
     let { elements } = this.state;
@@ -118,12 +144,15 @@ class App extends Component {
     // console.log(randomId())
     console.log(uuid())
     console.log(this.state.elements);
+    console.log(this.state.diceRoll);
+
 
 
 
 
 
     const { elements } = this.state;
+    const { diceRoll } = this.state;
 
     return (
       <div>
@@ -135,14 +164,21 @@ class App extends Component {
             name={elements.name}
             initiative={elements.initiative}
             hitpoints={elements.hitpoints}
+            ac={elements.ac}
             onNameChange={this.updateName}
             onInitiativeChange={this.updateInitiative}
             onHitpointsChange={this.updateHitpoints}
+            onAcChange={this.updateAc}
             onRemoveElement={this.removeElement}
             id={elements.id}
           />
 
         )}
+        <Dice
+          rolls={diceRoll}
+          onDiceRoll={this.updateRoll}
+        />
+
       </div>
     );
   }

@@ -7,9 +7,11 @@ export default ({
   name,
   initiative,
   hitpoints,
+  ac,
   onNameChange,
   onInitiativeChange,
   onHitpointsChange,
+  onAcChange,
   onRemoveElement,
 }) =>
 
@@ -30,6 +32,12 @@ export default ({
     <button onClick={() => onInitiativeChange(id, { target: { value: rollD20() } })}>Roll D20</button>
 
 
+    <Input
+      label="AC"
+      type="number"
+      value={ac}
+      onChange={e => onAcChange(id, e)}
+    />
     <Input
       label="Hitpoints"
       type="number"

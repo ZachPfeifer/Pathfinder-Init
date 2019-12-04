@@ -7,25 +7,35 @@ export const initialState = [
   {
     id: uuid(),
     name: "Zach",
-    initiative: 0,
-    hitpoints: 0,
+    initiative: undefined,
+    hitpoints: undefined,
+    ac: undefined,
   },
   {
     id: uuid(),
     name: "Charles",
-    initiative: 0,
-    hitpoints: 0,
+    initiative: undefined,
+    hitpoints: undefined,
+    ac: undefined,
 
   }, {
     id: uuid(),
     name: "Gabe",
-    initiative: 0,
-    hitpoints: 0,
+    initiative: undefined,
+    hitpoints: undefined,
+    ac: undefined,
 
   }, {
     id: uuid(),
     name: "",
-    initiative: 0,
-    hitpoints: 0,
+    initiative: undefined,
+    hitpoints: undefined,
+    ac: undefined,
 
   }];
+
+export const rolls = [
+  {
+    rolls: undefined,
+  },
+]
