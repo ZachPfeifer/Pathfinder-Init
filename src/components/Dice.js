@@ -8,41 +8,42 @@ export default ({
   onDiceRoll,
 }) =>
 
-  <div className="dice">
+  <div className="dice ">
     <div className="row">
-      <div className="col-12 col-sm-12">
+      <div className="col-12 col-sm-12 d-flex justify-content-center">
         <Dice
           label="Roll Results"
           type="number"
           value={rolls}
           onChange={e => onDiceRoll(e)}
         />
-        <Dice
+        {/* <Dice
           label="Modifiers"
           type="number"
           value={rolls}
           onChange={e => onDiceRoll(e)}
-        />
+        /> */}
       </div>
     </div>
 
     <hr />
-    <span>
-      <button className="btn btn-dark" onClick={() => onDiceRoll({ target: { value: rollPercentage() } })}>Roll Percentage</button>
-      <button className="btn btn-dark" onClick={() => onDiceRoll({ target: { value: rollD20() } })}>Roll D20</button>
-      <button className="btn btn-dark" onClick={() => onDiceRoll({ target: { value: rollD12() } })}>Roll D12</button>
-      <button className="btn btn-dark" onClick={() => onDiceRoll({ target: { value: rollD10() } })}>Roll D10</button>
-      <button className="btn btn-dark" onClick={() => onDiceRoll({ target: { value: rollD8() } })}>Roll D8</button>
-      <button className="btn btn-dark" onClick={() => onDiceRoll({ target: { value: rollD6() } })}>Roll D6</button>
-      <button className="btn btn-dark" onClick={() => onDiceRoll({ target: { value: rollD4() } })}>Roll D4</button>
+    <span className="d-flex justify-content-center">
+      <a>Rolls:</a>
+      <button className="btn btn-dark" onClick={() => onDiceRoll({ target: { value: rollD20() } })}>D20</button>
+      <button className="btn btn-dark" onClick={() => onDiceRoll({ target: { value: rollD12() } })}>D12</button>
+      <button className="btn btn-dark" onClick={() => onDiceRoll({ target: { value: rollD10() } })}>D10</button>
+      <button className="btn btn-dark" onClick={() => onDiceRoll({ target: { value: rollD8() } })}>D8</button>
+      <button className="btn btn-dark" onClick={() => onDiceRoll({ target: { value: rollD6() } })}>D6</button>
+      <button className="btn btn-dark" onClick={() => onDiceRoll({ target: { value: rollD4() } })}>D4</button>
+      <button className="btn btn-dark" onClick={() => onDiceRoll({ target: { value: rollPercentage() } })}>%</button>
     </span>
 
 
-    <hr />
+    {/* <hr />
     <i className="ra ra-dice-six ra-2x"></i>
     <i className="ra ra-perspective-dice-random ra-2x"></i>
     <i className="ra ra-perspective-dice-random ra-2x" onClick={() => onDiceRoll({ target: { value: rollPercentage() } })}>Roll Percentage</i>
-    <i className="ra ra-perspective-dice-random ra-2x" onClick={() => onDiceRoll({ target: { value: rollD20() } })}>Roll D20</i>
+    <i className="ra ra-perspective-dice-random ra-2x" onClick={() => onDiceRoll({ target: { value: rollD20() } })}>Roll D20</i> */}
 
 
 

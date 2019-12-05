@@ -23,13 +23,19 @@ export default ({
       onChange={e => onNameChange(id, e)}
     />
 
-    <Input
-      label="Initiative"
-      type="number"
-      value={initiative}
-      onChange={e => onInitiativeChange(id, e)}
-    />
-    <button className="btn btn-outline-dark btn-sm" onClick={() => onInitiativeChange(id, { target: { value: rollD20() } })}>Roll D20</button>
+    <div id="initiative">
+      <Input
+        label="Initiative"
+        type="number"
+        value={initiative}
+        onChange={e => onInitiativeChange(id, e)}
+      />
+      <button
+        className="btn btn-dark btn-sm"
+        type="button"
+        onClick={() => onInitiativeChange(id, { target: { value: rollD20() } })}
+      >D20</button>
+    </div>
 
 
     <Input
@@ -44,5 +50,5 @@ export default ({
       value={hitpoints}
       onChange={e => onHitpointsChange(id, e)}
     />
-    <button className="btn btn-danger" onClick={() => onRemoveElement(id)}>X</button>
+    <button className="btn btn-danger btn-sm" onClick={() => onRemoveElement(id)}>X</button>
   </div>;
