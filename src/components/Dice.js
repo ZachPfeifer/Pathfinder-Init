@@ -28,7 +28,7 @@ export default ({
 
     <hr />
     <span className="d-flex justify-content-center">
-      <a>Rolls:</a>
+      <p>Rolls:  </p>
       <button className="btn btn-dark" onClick={() => onDiceRoll({ target: { value: rollD20() } })}>D20</button>
       <button className="btn btn-dark" onClick={() => onDiceRoll({ target: { value: rollD12() } })}>D12</button>
       <button className="btn btn-dark" onClick={() => onDiceRoll({ target: { value: rollD10() } })}>D10</button>
