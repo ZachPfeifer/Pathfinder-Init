@@ -29,7 +29,7 @@ export default ({
       value={initiative}
       onChange={e => onInitiativeChange(id, e)}
     />
-    <button onClick={() => onInitiativeChange(id, { target: { value: rollD20() } })}>Roll D20</button>
+    <button className="btn btn-outline-dark btn-sm" onClick={() => onInitiativeChange(id, { target: { value: rollD20() } })}>Roll D20</button>
 
 
     <Input
@@ -44,5 +44,5 @@ export default ({
       value={hitpoints}
       onChange={e => onHitpointsChange(id, e)}
     />
-    <button onClick={() => onRemoveElement(id)}>-</button>
+    <button className="btn btn-outline-danger" onClick={() => onRemoveElement(id)}>X</button>
   </div>;

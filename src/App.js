@@ -161,7 +161,7 @@ class App extends Component {
           <h1 className="card-header">Pathfinder Initiative Tracker</h1>
           <div className="card-body">
             <h5 className="card-title">Initiatives:</h5>
-            <p className="card-text">
+            <p className="card-text col-12">
               {elements.map(elements =>
                 <Card
                   key={elements.key}
@@ -184,9 +184,9 @@ class App extends Component {
               />
             </p>
             <div className="card-footer">
-              <div className="btn-container">
-                <button className="btn btn-dark" onClick={this.addCard}>Add Player</button>
-                <button className="btn btn-dark" onClick={this.clearLocalStorage}>Clear Storage</button>
+              <div className="btn-container row">
+                <button className="btn btn-dark col-6" onClick={this.addCard}>Add Player</button>
+                <button className="btn btn-dark col-6" onClick={this.clearLocalStorage}>Clear Storage</button>
               </div>
             </div>
           </div>
