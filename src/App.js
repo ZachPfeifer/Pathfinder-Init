@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './App.css';
+import '../node_modules/rpg-awesome/css/rpg-awesome.min.css'
 import uuid from 'uuid'
 import { initialState, rolls } from "./state/Constants";
 import Card from './components/Card'
