@@ -46,7 +46,6 @@ body {
 
 
 .mycard {
-
   margin: 0px 0px 12px opx;
   width: 400px;
   padding: 8px;
@@ -71,7 +70,7 @@ body {
 }
 .mycard button{
    flex: 1;
-   color: white;
+   /* color: white; */
    cursor: pointer;
    display: flex;
    margin-left: -1px;;

@@ -44,5 +44,5 @@ export default ({
       value={hitpoints}
       onChange={e => onHitpointsChange(id, e)}
     />
-    <button className="btn btn-outline-danger" onClick={() => onRemoveElement(id)}>X</button>
+    <button className="btn btn-danger" onClick={() => onRemoveElement(id)}>X</button>
   </div>;

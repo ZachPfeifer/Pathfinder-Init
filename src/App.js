@@ -185,7 +185,7 @@ class App extends Component {
             </p>
             <div className="card-footer">
               <div className="btn-container row">
-                <button className="btn btn-dark col-6" onClick={this.addCard}>Add Player</button>
+                <button className="btn btn-dark col-6" onClick={this.addCard}>+ Add Player</button>
                 <button className="btn btn-dark col-6" onClick={this.clearLocalStorage}>Clear Storage</button>
               </div>
             </div>
