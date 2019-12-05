@@ -156,29 +156,47 @@ class App extends Component {
     const { diceRoll } = this.state;
 
     return (
-      <div>
-        <button onClick={this.addCard}>+</button>
-        <button onClick={this.clearLocalStorage}>Clear Storage</button>
-        {elements.map(elements =>
-          <Card
-            key={elements.key}
-            name={elements.name}
-            initiative={elements.initiative}
-            hitpoints={elements.hitpoints}
-            ac={elements.ac}
-            onNameChange={this.updateName}
-            onInitiativeChange={this.updateInitiative}
-            onHitpointsChange={this.updateHitpoints}
-            onAcChange={this.updateAc}
-            onRemoveElement={this.removeElement}
-            id={elements.id}
-          />
+      <div className="container center">
+        <div className="card bg-light mb-3">
+          <h1 className="card-header">Pathfinder Initiative Tracker</h1>
+          <div className="card-body">
+            <h5 className="card-title">Initiatives:</h5>
+            <p className="card-text">
+              {elements.map(elements =>
+                <Card
+                  key={elements.key}
+                  name={elements.name}
+                  initiative={elements.initiative}
+                  hitpoints={elements.hitpoints}
+                  ac={elements.ac}
+                  onNameChange={this.updateName}
+                  onInitiativeChange={this.updateInitiative}
+                  onHitpointsChange={this.updateHitpoints}
+                  onAcChange={this.updateAc}
+                  onRemoveElement={this.removeElement}
+                  id={elements.id}
+                />
 
-        )}
-        <Dice
-          rolls={diceRoll}
-          onDiceRoll={this.updateRoll}
-        />
+              )}
+              <Dice
+                rolls={diceRoll}
+                onDiceRoll={this.updateRoll}
+              />
+            </p>
+            <div className="card-footer">
+              <div className="btn-container">
+                <button className="btn btn-dark" onClick={this.addCard}>Add Player</button>
+                <button className="btn btn-dark" onClick={this.clearLocalStorage}>Clear Storage</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
 
       </div>
     );

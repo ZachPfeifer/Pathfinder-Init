@@ -1,3 +1,16 @@
+
+body {
+  background-color: silver;
+}
+
+.container{
+  background-image: url(https://c.pxhere.com/images/67/0f/6be4722ca323c575e92dfe113a72-1566373.jpg!d);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+
 .header{
   width: 480px;
   margin: 12 auto;
@@ -5,6 +18,35 @@
 }
 
 .card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: rgba(155, 155, 155, 0.466) !important;
+    background-clip: border-box;
+    border: 1px solid rgba(193, 214, 3, 0.774);
+    border-radius: .25rem;
+    margin: 0 auto;
+    width: 85%;
+    padding: 15px;
+    /* opacity: .7; */
+}
+
+ .btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    border-radius: .2rem;
+    height: 30px;
+    margin: 0 auto;
+ }
+
+
+.mycard {
+
   margin: 0px 0px 12px opx;
   width: 400px;
   padding: 8px;
@@ -13,21 +55,42 @@
   flex-direction: row;
 }
 
-.card input {
+.mycard input {
   width: 100%;
   border-top: none;
   border-right: none;
   border-left: none;
   font-size: 12px;
-
+  padding-right: 60px;
 }
-.card label{
+.mycard label{
    flex: 3;
   font-size: 10px;
 }
-.card button{
+/* .mycard button{
    flex: 1;
-   background-color: red;
    color: white;
    cursor: pointer;
+   display: flex;
+   margin-left: -1px;;
+} */
+
+
+
+/* #initiative{
+  width: auto;
+  display: flex;
+
 }
+
+#initiative input[type=number] {
+    flex: 1;
+    padding-right: 60px;
+}
+
+#initiative button[type=button] {
+    padding: 2px;
+    margin-top: 20px;
+    height: 30px;
+
+} */

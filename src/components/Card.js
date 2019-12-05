@@ -15,7 +15,7 @@ export default ({
   onRemoveElement,
 }) =>
 
-  <div className="card">
+  <div className="mycard">
     <Input
       label="Name"
       type="text"

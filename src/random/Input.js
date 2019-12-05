@@ -9,7 +9,7 @@ export default ({
   value,
   onChange
 }) =>
-  <div className="card">
+  <div className="mycard">
     <label>
       {label}
       <input type={type} value={value} onChange={onChange} />
