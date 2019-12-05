@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Pathfinder-Init/static/css/main.82e1702f.chunk.css",
+    "main.js": "/Pathfinder-Init/static/js/main.cf28ffdd.chunk.js",
+    "main.js.map": "/Pathfinder-Init/static/js/main.cf28ffdd.chunk.js.map",
+    "runtime-main.js": "/Pathfinder-Init/static/js/runtime-main.ddc041a2.js",
+    "runtime-main.js.map": "/Pathfinder-Init/static/js/runtime-main.ddc041a2.js.map",
+    "static/css/2.8a82041c.chunk.css": "/Pathfinder-Init/static/css/2.8a82041c.chunk.css",
+    "static/js/2.65291be0.chunk.js": "/Pathfinder-Init/static/js/2.65291be0.chunk.js",
+    "static/js/2.65291be0.chunk.js.map": "/Pathfinder-Init/static/js/2.65291be0.chunk.js.map",
+    "index.html": "/Pathfinder-Init/index.html",
+    "precache-manifest.c8eecb3542896905f64c02270e591986.js": "/Pathfinder-Init/precache-manifest.c8eecb3542896905f64c02270e591986.js",
+    "service-worker.js": "/Pathfinder-Init/service-worker.js",
+    "static/css/2.8a82041c.chunk.css.map": "/Pathfinder-Init/static/css/2.8a82041c.chunk.css.map",
+    "static/css/main.82e1702f.chunk.css.map": "/Pathfinder-Init/static/css/main.82e1702f.chunk.css.map",
+    "static/media/rpg-awesome.min.css": "/Pathfinder-Init/static/media/rpgawesome-webfont.e31a701a.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ddc041a2.js",
+    "static/css/2.8a82041c.chunk.css",
+    "static/js/2.65291be0.chunk.js",
+    "static/css/main.82e1702f.chunk.css",
+    "static/js/main.cf28ffdd.chunk.js"
+  ]
+}
